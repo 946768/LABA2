@@ -29,7 +29,6 @@ class Program
         File.AppendAllText(path, Environment.NewLine);
         File.AppendAllText(path, stringReverse(text));
 
-
         Console.WriteLine("Развёрнутая строка:" + stringReverse(text));
         Console.ReadKey();
     }
