@@ -1,20 +1,36 @@
 ﻿using System;
+using System.IO;
 
-namespace ConsoleApp2
+class Program
 {
-    class Program
+    static string stringReverse(string str)
     {
-        static void Main(string[] args)
+        string s = String.Empty;
+
+
+        for (int i = str.Length - 1; i >= 0; i--)
+
         {
-            string s = Console.ReadLine();
-
-            for (int i = s.Length - 1; i >= 0; i--)
-
-            {
-                Console.Write(s[i]);
-            }
-
-            Console.ReadLine();
+            s = s + str[i];
         }
+
+        return s;
+    }
+
+    static void Main(string[] args)
+    {
+        //var text = Console.ReadLine();
+
+        string path = @"D:\FFF.txt";
+        string text = System.IO.File.ReadAllText(path);
+
+        Console.WriteLine("Исходная строка:" + text);
+
+        File.AppendAllText(path, Environment.NewLine);
+        File.AppendAllText(path, stringReverse(text));
+
+
+        Console.WriteLine("Развёрнутая строка:" + stringReverse(text));
+        Console.ReadKey();
     }
 }
