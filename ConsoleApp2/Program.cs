@@ -3,7 +3,7 @@ using System.IO;
 
 class Program
 {
-    static string stringReverse(string str)
+    static string StringReverse(string str)
     {
         string s = String.Empty;
 
@@ -27,9 +27,9 @@ class Program
         Console.WriteLine("Исходная строка:" + text);
 
         File.AppendAllText(path, Environment.NewLine);
-        File.AppendAllText(path, stringReverse(text));
+        File.AppendAllText(path, StringReverse(text));
 
-        Console.WriteLine("Развёрнутая строка:" + stringReverse(text));
+        Console.WriteLine("Развёрнутая строка:" + StringReverse(text));
         Console.ReadKey();
     }
 }
